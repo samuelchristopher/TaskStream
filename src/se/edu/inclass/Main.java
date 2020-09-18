@@ -8,6 +8,8 @@ import se.edu.inclass.task.TaskNameComparator;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
+import static java.util.stream.Collectors.toList;
+
 public class Main {
 
     private TaskNameComparator taskNameComparator;
@@ -45,5 +47,12 @@ public class Main {
                 System.out.println(t);
             }
         }
+    }
+
+    public static ArrayList<Task> filterByString(ArrayList<Task> taskData, String filterString) {
+        ArrayList<Task> filteredTaskList = (ArrayList<Task>) taskData.stream()
+                .filter((t) -> t.getDescription().contains(filterString))
+                .collect(toList());
+        return filteredTaskList;
     }
 }
