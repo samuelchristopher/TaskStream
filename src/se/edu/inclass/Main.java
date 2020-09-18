@@ -9,6 +9,8 @@ import java.util.ArrayList;
 
 import static java.util.stream.Collectors.toList;
 
+import static java.util.stream.Collectors.toList;
+
 public class Main {
 
     private TaskNameComparator taskNameComparator;
@@ -69,7 +71,7 @@ public class Main {
             }
         }
     }
-
+    
     public static void printDeadlinesUsingStreams(ArrayList<Task> tasksData) {
         tasksData.stream()
                 .filter((t) -> t instanceof Deadline)
